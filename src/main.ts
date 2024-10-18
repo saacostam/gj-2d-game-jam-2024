@@ -1,7 +1,7 @@
 import { Color, Engine } from 'excalibur'
 import './style.css'
 import { GAME_CONFIG } from './modules/config'
-import { MainScene } from './modules/scenes'
+import { MainScene, SceneKey } from './modules/scenes'
 
 const game = new Engine({
   width: GAME_CONFIG.WIDTH * 2,
@@ -12,7 +12,7 @@ const game = new Engine({
   pixelRatio: 2,
 })
 
-game.addScene('main', new MainScene())
-game.goToScene('main')
+game.addScene(SceneKey.MAIN, new MainScene())
+game.goToScene(SceneKey.MAIN)
 
 game.start()
