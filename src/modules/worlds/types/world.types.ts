@@ -11,6 +11,8 @@ export enum WorldType {
   FOREST = 'forest',
   DESERT = 'desert',
   CAVES = 'caves',
+  VOLCANO = 'volcano',
+  TUNDRA = 'tundra',
 }
 
 export interface WorldSeed {
