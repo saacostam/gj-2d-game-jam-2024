@@ -56,14 +56,16 @@ export class BaseWorld extends Actor {
       position === WorldPosition.BOTTOM_LEFT
         ? 0
         : WORLD_CONFIG.WORLD_WIDTH + WORLD_CONFIG.TILE_SIZE) +
-      WORLD_CONFIG.TILE_SIZE
+      WORLD_CONFIG.TILE_SIZE +
+      WORLD_CONFIG.TILE_SIZE / 2
 
     const BASE_Y =
       (position === WorldPosition.TOP_LEFT ||
       position === WorldPosition.TOP_RIGHT
         ? 0
         : WORLD_CONFIG.WORLD_HEIGHT + WORLD_CONFIG.TILE_SIZE) +
-      WORLD_CONFIG.TILE_SIZE
+      WORLD_CONFIG.TILE_SIZE +
+      WORLD_CONFIG.TILE_SIZE / 2
 
     return {
       x: BASE_X,

@@ -7,11 +7,11 @@ export interface ForestWolrdArgs {
 }
 
 export class ForestWorld extends BaseWorld {
-  constructor() {
+  constructor({ position }: ForestWolrdArgs) {
     super({
       worldSeed: {
         type: WorldType.FOREST,
-        position: WorldPosition.TOP_LEFT,
+        position: position,
       },
       tileActorFactory: new ForestTileActorFactory(),
     })

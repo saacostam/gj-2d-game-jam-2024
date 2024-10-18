@@ -4,12 +4,13 @@ import { BaseTileActor } from '../base'
 export interface ForestTileActorArgs {
   x: number
   y: number
+  color?: Color
 }
 
 export class ForestTileActor extends BaseTileActor {
-  constructor({ x, y }: ForestTileActorArgs) {
+  constructor({ x, y, color }: ForestTileActorArgs) {
     super({
-      color: Color.Green,
+      color: color || Color.Green,
       x,
       y,
     })

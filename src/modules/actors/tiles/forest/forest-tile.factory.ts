@@ -1,3 +1,4 @@
+import { Color } from 'excalibur'
 import {
   BaseTileActorFactory,
   BaseTileActorFactoryCreateTileActorArgs,
@@ -15,6 +16,7 @@ export class ForestTileActorFactory extends BaseTileActorFactory {
     return new ForestTileActor({
       x: x,
       y: y,
+      color: Math.random() < 0.45 ? Color.Green : Color.Orange,
     })
   }
 }
