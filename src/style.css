@@ -13,15 +13,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
+#app {
+  text-align: center;
+  margin: auto;
   height: 100vh;
 }
 
+h1 {
+  margin-bottom: 0rem;
+}
+
+div#author {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
 canvas {
+  margin: auto;
+  display: block;
   border: 2px solid white;
   border-radius: 0.5rem;
 }

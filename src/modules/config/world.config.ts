@@ -1,6 +1,6 @@
 const _TILE_SIZE = 8
-const _HORIZONTAL_TILES = 16
-const _VERTICAL_TILES = 16
+const _HORIZONTAL_TILES = 12
+const _VERTICAL_TILES = 12
 
 export const WORLD_CONFIG = {
   TILE_SIZE: _TILE_SIZE,
