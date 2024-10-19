@@ -14,7 +14,7 @@
 
 # TODO
 
-- [ ] Create tiles and factory for other world types.
+- [x] Create tiles and factory for other world types.
 - [ ] Use the spritesheet to render tiles.
 - [ ] Apply tile's spritesheet with two frame of animation.
 
