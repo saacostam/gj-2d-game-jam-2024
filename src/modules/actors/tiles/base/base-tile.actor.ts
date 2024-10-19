@@ -8,6 +8,8 @@ export interface BaseTileActorArgs {
 }
 
 export class BaseTileActor extends Actor {
+  static NumberOfVariations: number = 4
+
   constructor({ color, x, y }: BaseTileActorArgs) {
     super({
       width: WORLD_CONFIG.TILE_SIZE,

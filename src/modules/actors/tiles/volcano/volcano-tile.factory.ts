@@ -20,6 +20,9 @@ export class VolcanoTileActorFactory extends BaseTileActorFactory {
       y,
       color:
         p < 0.125 ? Color.Vermilion : p < 0.25 ? Color.Red : Color.DarkGray,
+      variation: Math.floor(
+        Math.random() * VolcanoTileActor.NumberOfVariations,
+      ),
     })
   }
 }

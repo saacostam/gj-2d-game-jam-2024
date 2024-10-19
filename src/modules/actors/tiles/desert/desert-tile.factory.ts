@@ -17,6 +17,7 @@ export class DesertTileActorFactory extends BaseTileActorFactory {
       x,
       y,
       color: Math.random() < 0.25 ? Color.Orange : Color.Yellow,
+      variation: Math.floor(Math.random() * DesertTileActor.NumberOfVariations),
     })
   }
 }

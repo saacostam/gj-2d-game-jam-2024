@@ -15,8 +15,8 @@
 # TODO
 
 - [x] Create tiles and factory for other world types.
-- [ ] Use the spritesheet to render tiles.
-- [ ] Apply tile's spritesheet with two frame of animation.
+- [x] Use the spritesheet to render tiles.
+- [x] Apply tile's spritesheet with two frame of animation.
 
 - [ ] Create limits between worlds.
 - [ ] Create the portal mechanic.

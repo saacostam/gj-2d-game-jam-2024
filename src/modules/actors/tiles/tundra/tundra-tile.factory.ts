@@ -17,6 +17,7 @@ export class TundraTileActorFactory extends BaseTileActorFactory {
       x,
       y,
       color: Math.random() < 0.15 ? Color.ExcaliburBlue : Color.White,
+      variaton: Math.floor(Math.random() * TundraTileActor.NumberOfVariations),
     })
   }
 }

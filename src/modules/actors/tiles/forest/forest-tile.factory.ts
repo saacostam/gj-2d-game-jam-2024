@@ -17,6 +17,7 @@ export class ForestTileActorFactory extends BaseTileActorFactory {
       x: x,
       y: y,
       color: Math.random() < 0.45 ? Color.Green : Color.Orange,
+      variation: Math.floor(Math.random() * ForestTileActor.NumberOfVariations),
     })
   }
 }

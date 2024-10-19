@@ -17,6 +17,7 @@ export class CaveTileActorFactory extends BaseTileActorFactory {
       x,
       y,
       color: Math.random() < 0.35 ? Color.Gray : Color.LightGray,
+      variation: Math.floor(Math.random() * CaveTileActor.NumberOfVariations),
     })
   }
 }
