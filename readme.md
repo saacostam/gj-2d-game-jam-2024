@@ -18,6 +18,8 @@
 - [x] Use the spritesheet to render tiles.
 - [x] Apply tile's spritesheet with two frame of animation.
 
+- [ ] Create player actor
+
 - [ ] Create limits between worlds.
 - [ ] Create the portal mechanic.
 
