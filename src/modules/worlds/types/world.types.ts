@@ -10,7 +10,7 @@ export enum WorldPosition {
 export enum WorldType {
   FOREST = 'forest',
   DESERT = 'desert',
-  CAVES = 'caves',
+  CAVE = 'cave',
   VOLCANO = 'volcano',
   TUNDRA = 'tundra',
 }

@@ -1,7 +1,7 @@
 import { Actor, Color } from 'excalibur'
 import { WORLD_CONFIG } from '../../../config'
 
-interface BaseTileActorArgs {
+export interface BaseTileActorArgs {
   color?: Color
   x: number
   y: number

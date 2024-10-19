@@ -1,6 +1,7 @@
 # Game Design
 
 ### Worlds
+
 - Forest
 - Volcano
 - Desert
@@ -12,6 +13,7 @@
 - **Color Palette:** [h16da](https://lospec.com/palette-list/h16da)
 
 # TODO
+
 - [ ] Create tiles and factory for other world types.
 - [ ] Use the spritesheet to render tiles.
 - [ ] Apply tile's spritesheet with two frame of animation.
@@ -28,12 +30,12 @@
 - [ ] Implement the world destruction event (Lazer).
 - [ ] Implement the world replacement logic.
 
-- [ ] *Implement enemies.
-- [ ] *Implement range weapon(s).
-- [ ] *Make ammon dependent on collected resources.
+- [ ] \*Implement enemies.
+- [ ] \*Implement range weapon(s).
+- [ ] \*Make ammon dependent on collected resources.
 
-- [ ] *Polish the portal mechanic animation.
+- [ ] \*Polish the portal mechanic animation.
 
-- [ ] *Create destroyed biome spritesheets and render them when the world is destroyed.
+- [ ] \*Create destroyed biome spritesheets and render them when the world is destroyed.
 
-- [ ] *Add a meteorite as destruction event (or other).
+- [ ] \*Add a meteorite as destruction event (or other).

@@ -1,3 +1,3 @@
 export enum SceneKey {
-    MAIN = 'main',
+  MAIN = 'main',
 }
