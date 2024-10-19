@@ -16,7 +16,7 @@ export class CaveTileActorFactory extends BaseTileActorFactory {
     return new CaveTileActor({
       x,
       y,
-      color: Math.random() < 0.45 ? Color.Gray : Color.LightGray,
+      color: Math.random() < 0.35 ? Color.Gray : Color.LightGray,
     })
   }
 }

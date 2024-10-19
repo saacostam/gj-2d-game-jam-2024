@@ -1,5 +1,5 @@
 import { Engine, Scene } from 'excalibur'
-import { BaseWorld, ForestWorld, WorldPosition } from '../worlds'
+import { BaseWorld, CaveWorld, ForestWorld, WorldPosition } from '../worlds'
 
 export class MainScene extends Scene {
   public onInitialize(_engine: Engine<any>): void {
@@ -7,10 +7,10 @@ export class MainScene extends Scene {
       new ForestWorld({
         position: WorldPosition.TOP_LEFT,
       }),
-      new ForestWorld({
+      new CaveWorld({
         position: WorldPosition.TOP_RIGHT,
       }),
-      new ForestWorld({
+      new CaveWorld({
         position: WorldPosition.BOTTOM_LEFT,
       }),
       new ForestWorld({
