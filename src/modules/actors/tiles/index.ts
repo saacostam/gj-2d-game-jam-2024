@@ -1,3 +1,3 @@
 export * from './base'
-export * from './caves'
+export * from './cave'
 export * from './forest'
