@@ -4,6 +4,7 @@ import {
   CaveWorld,
   DesertWorld,
   ForestWorld,
+  TundraWorld,
   WorldPosition,
 } from '../worlds'
 
@@ -19,7 +20,7 @@ export class MainScene extends Scene {
       new CaveWorld({
         position: WorldPosition.BOTTOM_LEFT,
       }),
-      new ForestWorld({
+      new TundraWorld({
         position: WorldPosition.BOTTOM_RIGHT,
       }),
     ]
