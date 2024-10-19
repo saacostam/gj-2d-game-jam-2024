@@ -1,5 +1,6 @@
 import { Actor, Color } from 'excalibur'
 import { WORLD_CONFIG } from '../../../config'
+import { ORTHOGONAL_ROTATIONS } from '../../../physics'
 
 export interface BaseTileActorArgs {
   color?: Color
@@ -18,5 +19,10 @@ export class BaseTileActor extends Actor {
       x: x,
       y: y,
     })
+
+    this.rotation =
+      ORTHOGONAL_ROTATIONS[
+        Math.floor(Math.random() * ORTHOGONAL_ROTATIONS.length)
+      ]
   }
 }
