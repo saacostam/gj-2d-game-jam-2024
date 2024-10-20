@@ -14,5 +14,10 @@ export class PortalTileActor extends BaseTileActor {
 
     this.graphics.use(PortalGraphics.sprite)
     this.graphics.use(PortalGraphics.animations.idle)
+
+    this.onCollisionStart = () =>
+      this.graphics.use(PortalGraphics.animations.pressed)
+    this.onCollisionEnd = () =>
+      this.graphics.use(PortalGraphics.animations.idle)
   }
 }
