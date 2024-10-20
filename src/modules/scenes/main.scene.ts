@@ -10,7 +10,7 @@ import {
 } from '../worlds'
 import { GAME_CONFIG, WORLD_CONFIG } from '../config'
 import { Player } from '../actors/player'
-import { LimitTileActor } from '../actors/tiles'
+import { LimitTileActor, PortalTileActor } from '../actors/tiles'
 
 export class MainScene extends Scene {
   private roundRobinIndex = Math.floor(
@@ -93,6 +93,15 @@ export class MainScene extends Scene {
               1 * (WORLD_CONFIG.VERTICAL_TILES + 1) * WORLD_CONFIG.TILE_SIZE,
           }),
         )
+      } else {
+        limitTileActors.push(
+          new PortalTileActor({
+            x: BASE_X + x * WORLD_CONFIG.TILE_SIZE,
+            y:
+              BASE_Y +
+              1 * (WORLD_CONFIG.VERTICAL_TILES + 1) * WORLD_CONFIG.TILE_SIZE,
+          }),
+        )
       }
 
       limitTileActors.push(
@@ -127,6 +136,15 @@ export class MainScene extends Scene {
       ) {
         limitTileActors.push(
           new LimitTileActor({
+            x:
+              BASE_X +
+              1 * (WORLD_CONFIG.HORIZONTAL_TILES + 1) * WORLD_CONFIG.TILE_SIZE,
+            y: BASE_Y + y * WORLD_CONFIG.TILE_SIZE,
+          }),
+        )
+      } else {
+        limitTileActors.push(
+          new PortalTileActor({
             x:
               BASE_X +
               1 * (WORLD_CONFIG.HORIZONTAL_TILES + 1) * WORLD_CONFIG.TILE_SIZE,
