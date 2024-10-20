@@ -42,3 +42,5 @@
 - [ ] \*Create destroyed biome spritesheets and render them when the world is destroyed.
 
 - [ ] \*Add a meteorite as destruction event (or other).
+
+- [ ] \*Refactor main.scene.getWorldLimitTiles mess.

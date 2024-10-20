@@ -6,7 +6,7 @@ import { TileGraphic } from '../types'
 export const limitTileAnimationVariations: TileGraphic[] = []
 
 for (let index = 0; index < 4; index++) {
-    limitTileAnimationVariations.push({
+  limitTileAnimationVariations.push({
     sprite: new Sprite({
       image: worldTilesImage,
     }),

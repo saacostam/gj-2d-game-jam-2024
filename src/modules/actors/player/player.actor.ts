@@ -1,4 +1,4 @@
-import { Actor, Color, Engine, Keys } from 'excalibur'
+import { Actor, CollisionType, Color, Engine, Keys } from 'excalibur'
 import { WORLD_CONFIG } from '../../config'
 import { PlayerGraphics } from './player.graphics'
 import { OrthogonalDirection } from '../../physics'
@@ -19,6 +19,7 @@ export class Player extends Actor {
       width: (WORLD_CONFIG.TILE_SIZE * 3) / 4,
       height: (WORLD_CONFIG.TILE_SIZE * 3) / 4,
       color: Color.Rose,
+      collisionType: CollisionType.Active,
     })
 
     this.graphics.use(PlayerGraphics.sprite)
