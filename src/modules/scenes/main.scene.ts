@@ -1,4 +1,4 @@
-import { Engine, Scene, World } from 'excalibur'
+import { Engine, Scene } from 'excalibur'
 import {
   BaseWorld,
   CaveWorld,
@@ -8,7 +8,7 @@ import {
   VolcanoWorld,
   WorldPosition,
 } from '../worlds'
-import { GAME_CONFIG } from '../config'
+import { GAME_CONFIG, WORLD_CONFIG } from '../config'
 import { Player } from '../actors/player'
 
 export class MainScene extends Scene {
@@ -34,8 +34,8 @@ export class MainScene extends Scene {
 
     this.add(
       new Player({
-        x: 8,
-        y: 8,
+        x: WORLD_CONFIG.WORLD_WIDTH / 2 + WORLD_CONFIG.TILE_SIZE,
+        y: WORLD_CONFIG.WORLD_HEIGHT / 2 + WORLD_CONFIG.TILE_SIZE,
       }),
     )
   }
