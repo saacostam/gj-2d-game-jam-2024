@@ -12,7 +12,7 @@ export class TundraTileActorFactory extends BaseTileActorFactory {
   public createTileActor({
     x,
     y,
-  }: BaseTileActorFactoryCreateTileActorArgs): TundraTileActor {
+  }: TundraTileActorFactoryCreateTileActorArgs): TundraTileActor {
     return new TundraTileActor({
       x,
       y,
