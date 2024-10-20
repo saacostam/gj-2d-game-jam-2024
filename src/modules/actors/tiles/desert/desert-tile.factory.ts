@@ -12,7 +12,7 @@ export class DesertTileActorFactory extends BaseTileActorFactory {
   public createTileActor({
     x,
     y,
-  }: BaseTileActorFactoryCreateTileActorArgs): DesertTileActor {
+  }: DesertTileActorFactoryCreateTileActorArgs): DesertTileActor {
     return new DesertTileActor({
       x,
       y,

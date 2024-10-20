@@ -12,7 +12,7 @@ export class VolcanoTileActorFactory extends BaseTileActorFactory {
   public createTileActor({
     x,
     y,
-  }: BaseTileActorFactoryCreateTileActorArgs): VolcanoTileActor {
+  }: VolcanoTileActorFactoryCreateTileActorArgs): VolcanoTileActor {
     const p = Math.random()
 
     return new VolcanoTileActor({
