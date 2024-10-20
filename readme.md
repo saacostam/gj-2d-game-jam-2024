@@ -20,7 +20,7 @@
 
 - [x] Create player actor.
 
-- [ ] Create limits between worlds.
+- [x] Create limits between worlds.
 
 - [ ] Create the resource actor.
 - [ ] Apply resource's spritesheet with four frames of animation.
