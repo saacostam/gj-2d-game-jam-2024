@@ -2,7 +2,7 @@ import { Color, Engine } from 'excalibur'
 import './style.css'
 import { GAME_CONFIG } from './modules/config'
 import { MainScene, SceneKey } from './modules/scenes'
-import { loader } from './modules/resources'
+import { loader } from './modules/assets'
 
 const game = new Engine({
   width: GAME_CONFIG.WIDTH * 3,

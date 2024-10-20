@@ -1,5 +1,5 @@
 import { Animation, Sprite } from 'excalibur'
-import { playerImage, playerSpritesheet } from '../../resources'
+import { playerImage, playerSpritesheet } from '../../assets'
 
 const ANIMATION_SPEED = 1.5
 

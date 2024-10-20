@@ -1,5 +1,5 @@
 import { Sprite } from 'excalibur'
-import { worldTilesImage, worldTilesSpritesheet } from '../../../resources'
+import { worldTilesImage, worldTilesSpritesheet } from '../../../assets'
 import { AnimationUtils } from '../utils'
 import { TileGraphic } from '../types'
 
