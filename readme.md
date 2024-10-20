@@ -18,10 +18,9 @@
 - [x] Use the spritesheet to render tiles.
 - [x] Apply tile's spritesheet with two frame of animation.
 
-- [ ] Create player actor
+- [x] Create player actor.
 
 - [ ] Create limits between worlds.
-- [ ] Create the portal mechanic.
 
 - [ ] Create the resource actor.
 - [ ] Apply resource's spritesheet with four frames of animation.
@@ -31,6 +30,8 @@
 
 - [ ] Implement the world destruction event (Lazer).
 - [ ] Implement the world replacement logic.
+
+- [ ] Create the portal mechanic.
 
 - [ ] \*Implement enemies.
 - [ ] \*Implement range weapon(s).

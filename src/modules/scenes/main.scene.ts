@@ -1,4 +1,4 @@
-import { Engine, Scene, World } from 'excalibur'
+import { Engine, Scene } from 'excalibur'
 import {
   BaseWorld,
   CaveWorld,
@@ -8,7 +8,8 @@ import {
   VolcanoWorld,
   WorldPosition,
 } from '../worlds'
-import { GAME_CONFIG } from '../config'
+import { GAME_CONFIG, WORLD_CONFIG } from '../config'
+import { Player } from '../actors/player'
 
 export class MainScene extends Scene {
   private roundRobinIndex = Math.floor(
@@ -30,6 +31,13 @@ export class MainScene extends Scene {
     worlds.forEach((world) => {
       this.add(world)
     })
+
+    this.add(
+      new Player({
+        x: WORLD_CONFIG.WORLD_WIDTH / 2 + WORLD_CONFIG.TILE_SIZE,
+        y: WORLD_CONFIG.WORLD_HEIGHT / 2 + WORLD_CONFIG.TILE_SIZE,
+      }),
+    )
   }
 
   private getNextWorld(args: { position: WorldPosition }): BaseWorld {
