@@ -88,5 +88,7 @@ export class Player extends Actor {
           break
       }
     }
+
+    this.z = this.pos.y;
   }
 }

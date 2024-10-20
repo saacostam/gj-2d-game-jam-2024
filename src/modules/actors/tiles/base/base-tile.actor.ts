@@ -26,6 +26,7 @@ export class BaseTileActor extends Actor {
       color: color || Color.Magenta,
       x: x,
       y: y,
+      z: -20,
       collisionType: collisionType,
     })
 

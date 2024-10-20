@@ -1,6 +1,8 @@
+import { CollisionType, Shape, Vector } from 'excalibur'
 import { WorldType } from '../../../worlds'
 import { BaseResourceActor, BaseResourceActorArgs } from '../base'
 import { TreeResourceGraphics } from './tree-resource.graphics'
+import { WORLD_CONFIG } from '../../../config'
 
 export interface TreeResourceActorArgs extends BaseResourceActorArgs {
   worldType: WorldType
@@ -13,6 +15,12 @@ export class TreeResourceActor extends BaseResourceActor {
     super({
       x,
       y,
+      collisionType: CollisionType.Fixed,
+      collider: Shape.Box(
+        WORLD_CONFIG.TILE_SIZE / 4,
+        WORLD_CONFIG.TILE_SIZE / 5,
+      ),
+      anchor: new Vector(0.5, 0.9),
     })
 
     let treeGraphicsRow: number
