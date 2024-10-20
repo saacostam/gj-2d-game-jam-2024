@@ -9,6 +9,7 @@ import {
   WorldPosition,
 } from '../worlds'
 import { GAME_CONFIG } from '../config'
+import { Player } from '../actors/player'
 
 export class MainScene extends Scene {
   private roundRobinIndex = Math.floor(
@@ -30,6 +31,13 @@ export class MainScene extends Scene {
     worlds.forEach((world) => {
       this.add(world)
     })
+
+    this.add(
+      new Player({
+        x: 8,
+        y: 8,
+      }),
+    )
   }
 
   private getNextWorld(args: { position: WorldPosition }): BaseWorld {
