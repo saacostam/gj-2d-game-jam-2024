@@ -29,8 +29,6 @@
 - [ ] Implement the world destruction event (Lazer).
 - [ ] Implement the world replacement logic.
 
-- [ ] Create the portal mechanic.
-
 - [ ] \*Implement enemies.
 - [ ] \*Implement range weapon(s).
 - [ ] \*Make ammon dependent on collected resources.
