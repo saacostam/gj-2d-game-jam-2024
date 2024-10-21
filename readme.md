@@ -30,7 +30,7 @@
 - [x] Implement the world replacement logic.
 - [x] Kill the enemy it is in the destroyed world.
 
-- [ ] \*Implement enemies.
+- [x] \*Implement enemies.
 - [ ] \*Implement range weapon(s).
 - [ ] \*Make ammon dependent on collected resources.
 
