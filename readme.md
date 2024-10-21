@@ -28,7 +28,7 @@
 
 - [x] Implement the world destruction event (Laser).
 - [x] Implement the world replacement logic.
-- [ ] Kill the enemy it is in the destroyed world.
+- [x] Kill the enemy it is in the destroyed world.
 
 - [ ] \*Implement enemies.
 - [ ] \*Implement range weapon(s).
