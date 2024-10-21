@@ -33,7 +33,11 @@ export class MobActor extends Actor {
         this.scene.gameOver()
       }
 
-      if (other.owner instanceof SpearActor) {
+      if (
+        other.owner instanceof SpearActor &&
+        this.scene instanceof MainScene
+      ) {
+        this.scene.enemiesKilled++
         this.kill()
       }
     }

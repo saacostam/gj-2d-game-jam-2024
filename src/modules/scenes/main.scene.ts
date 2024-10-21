@@ -12,6 +12,7 @@ import { GAME_CONFIG, WORLD_CONFIG } from '../config'
 import { Player } from '../actors/player'
 import { LimitTileActor, PortalTileActor } from '../actors/tiles'
 import {
+  enemiesKilledCounterHtmlElement,
   timelineProgressHtmlElement,
   timelineProgressLabelElement,
 } from '../ui'
@@ -36,6 +37,17 @@ export class MainScene extends Scene {
 
   private static TOTAL_ENEMIES_SPAWNED = 10
 
+  public _enemiesKilled = 0
+
+  get enemiesKilled() {
+    return this._enemiesKilled
+  }
+
+  set enemiesKilled(value: number) {
+    this._enemiesKilled = value
+    this.handleEnemiesKilled()
+  }
+
   get loopTime() {
     return this._loopTime
   }
@@ -59,6 +71,9 @@ export class MainScene extends Scene {
   private nextToEliminate: number = this.getNextToEliminate()
 
   public onActivate(): void {
+    this.handleEnemiesKilled()
+    this.handleLoopTimeUpdate()
+
     for (let i = 0; i < MainScene.POSITIONS.length; i++) {
       const world = this.getNextWorld({
         position: MainScene.POSITIONS[i],
@@ -353,5 +368,9 @@ export class MainScene extends Scene {
     const url = new URL(window.location.toString())
     url.searchParams.set('lost', String(UrlUtils.getLostCount() + 1))
     window.location.search = url.search
+  }
+
+  private handleEnemiesKilled() {
+    enemiesKilledCounterHtmlElement.innerText = `☠️ KILLED: ${this.enemiesKilled}`
   }
 }

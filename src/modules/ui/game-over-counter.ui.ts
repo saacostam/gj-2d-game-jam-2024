@@ -5,3 +5,11 @@ export const gameOverCounterHtmlElement: HTMLDivElement = (() => {
 
   return gameOverCounter!
 })()
+
+export const enemiesKilledCounterHtmlElement: HTMLDivElement = (() => {
+  const enemisKilledCounter = document.querySelector<HTMLDivElement>(
+    'div#enemies-killed-counter',
+  )
+
+  return enemisKilledCounter!
+})()
