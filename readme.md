@@ -26,8 +26,9 @@
 - [x] Apply resource's spritesheet with four frames of animation.
 - [x] Implement the collection logic with resources.
 
-- [ ] Implement the world destruction event (Laser).
-- [ ] Implement the world replacement logic.
+- [x] Implement the world destruction event (Laser).
+- [x] Implement the world replacement logic.
+- [ ] Kill the enemy it is in the destroyed world.
 
 - [ ] \*Implement enemies.
 - [ ] \*Implement range weapon(s).
