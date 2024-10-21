@@ -34,3 +34,25 @@ canvas {
   border: 2px solid white;
   border-radius: 0.5rem;
 }
+
+img {
+  image-rendering: pixelated;
+}
+
+#wood-counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  margin: auto;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  width: 636px;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+}
+
+#wood-counter {
+  margin-left: 0.3rem;
+  font-weight: 400;
+}

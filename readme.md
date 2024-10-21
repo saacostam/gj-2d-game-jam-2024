@@ -24,7 +24,7 @@
 
 - [x] Create the resource actor.
 - [x] Apply resource's spritesheet with four frames of animation.
-- [ ] Implement the collection logic with resources.
+- [x] Implement the collection logic with resources.
 
 - [ ] Implement the world destruction event (Lazer).
 - [ ] Implement the world replacement logic.

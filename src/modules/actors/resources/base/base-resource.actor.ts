@@ -8,6 +8,8 @@ import {
 } from 'excalibur'
 import { WORLD_CONFIG } from '../../../config'
 import { BaseResourceGraphics } from './base-resource.graphics'
+import { Player } from '../../player'
+import { PointerActor } from '../../pointer'
 
 export interface BaseResourceActorArgs {
   x: number
@@ -52,6 +54,23 @@ export class BaseResourceActor extends Actor {
 
     this.graphics.use(this.resourceGraphics.sprite)
     this.graphics.use(this.resourceGraphics.animations.full)
+
+    this.onCollisionStart = (_, other) => {
+      if (other.owner instanceof Player) {
+        this.addChild(
+          new PointerActor({
+            x: 0,
+            y: -WORLD_CONFIG.TILE_SIZE / 2,
+          }),
+        )
+      }
+    }
+
+    this.onCollisionEnd = (_, other) => {
+      if (other.owner instanceof Player) {
+        this.removeAllChildren()
+      }
+    }
   }
 
   update(engine: Engine<any>, delta: number): void {
