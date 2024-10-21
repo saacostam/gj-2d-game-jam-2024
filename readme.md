@@ -31,8 +31,8 @@
 - [x] Kill the enemy it is in the destroyed world.
 
 - [x] \*Implement enemies.
-- [ ] \*Implement range weapon(s).
-- [ ] \*Make ammon dependent on collected resources.
+- [x] \*Implement range weapon(s).
+- [x] \*Make ammon dependent on collected resources.
 
 - [ ] \*Polish the portal mechanic animation.
 
