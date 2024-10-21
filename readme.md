@@ -22,11 +22,9 @@
 
 - [x] Create limits between worlds.
 
-- [ ] Create the resource actor.
-- [ ] Apply resource's spritesheet with four frames of animation.
-- [ ] Think of a better name for "Collection Place".
-- [ ] Create the "Collection Place" resource and actor.
-- [ ] Implement the collection logic with resources and "Collection Places".
+- [x] Create the resource actor.
+- [x] Apply resource's spritesheet with four frames of animation.
+- [x] Implement the collection logic with resources.
 
 - [ ] Implement the world destruction event (Lazer).
 - [ ] Implement the world replacement logic.

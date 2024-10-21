@@ -10,6 +10,8 @@ import {
 import { WORLD_CONFIG } from '../../config'
 import { PlayerGraphics } from './player.graphics'
 import { OrthogonalDirection } from '../../physics'
+import { BaseResourceActor, TreeResourceActor } from '../resources'
+import { woodCounterHtmlElement } from '../../ui'
 
 export interface PlayerArgs {
   x: number
@@ -18,6 +20,8 @@ export interface PlayerArgs {
 
 export class Player extends Actor {
   public lookingDirection: OrthogonalDirection = OrthogonalDirection.DOWN
+  private _wood: number = 0
+  private availableResources: BaseResourceActor[] = []
 
   constructor({ x, y }: PlayerArgs) {
     super({
@@ -37,6 +41,32 @@ export class Player extends Actor {
 
     this.graphics.use(PlayerGraphics.sprite)
     this.graphics.use(PlayerGraphics.animations.idleDown)
+
+    this.onCollisionStart = (_, other) => {
+      if (other.owner instanceof TreeResourceActor) {
+        this.availableResources.push(other.owner)
+      }
+    }
+
+    this.onCollisionEnd = (_, other) => {
+      if (other.owner instanceof TreeResourceActor) {
+        this.availableResources = this.availableResources.filter(
+          (resource) => resource !== other.owner,
+        )
+      }
+    }
+
+    this.wood = 0
+  }
+
+  public get wood(): number {
+    return this._wood
+  }
+
+  public set wood(value: number) {
+    this._wood = value
+
+    woodCounterHtmlElement.innerText = value.toString()
   }
 
   public update(engine: Engine, delta: number): void {
@@ -88,5 +118,14 @@ export class Player extends Actor {
           break
       }
     }
+
+    if (input.keyboard.wasPressed(Keys.Space)) {
+      this.availableResources.forEach((resource) => {
+        resource.amount--
+        this.wood++
+      })
+    }
+
+    this.z = this.pos.y
   }
 }

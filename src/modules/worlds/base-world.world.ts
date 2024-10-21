@@ -1,7 +1,8 @@
 import { Actor, Engine } from 'excalibur'
-import { WorldPosition, WorldSeed, WorldState } from './types'
+import { WorldPosition, WorldSeed, WorldState, WorldType } from './types'
 import { WORLD_CONFIG } from '../config'
 import { BaseTileActorFactory } from '../actors/tiles'
+import { BaseResourceActor, TreeResourceActor } from '../actors/resources'
 
 export interface BaseWorldParams {
   worldSeed: WorldSeed
@@ -9,6 +10,8 @@ export interface BaseWorldParams {
 }
 
 export class BaseWorld extends Actor {
+  public static NUMBER_OF_RESOURCE = 3
+
   worldSeed: WorldSeed
   tileActorFactory: BaseTileActorFactory
 
@@ -37,9 +40,15 @@ export class BaseWorld extends Actor {
       baseY: BASE_Y,
     })
 
+    const resources = this.generateResourcesActors({
+      baseX: BASE_X,
+      baseY: BASE_Y,
+      type: type,
+    })
+
     return {
       type: type,
-      actors: [...tileActors],
+      actors: [...tileActors, ...resources],
     }
   }
 
@@ -89,5 +98,29 @@ export class BaseWorld extends Actor {
     }
 
     return tileActors
+  }
+
+  private generateResourcesActors(args: {
+    baseX: number
+    baseY: number
+    type: WorldType
+  }): Actor[] {
+    const resourcesActors: BaseResourceActor[] = []
+
+    for (let i = 0; i < BaseWorld.NUMBER_OF_RESOURCE; i++) {
+      const resourceActor = new TreeResourceActor({
+        x:
+          args.baseX +
+          Math.random() * (WORLD_CONFIG.WORLD_WIDTH - WORLD_CONFIG.TILE_SIZE),
+        y:
+          args.baseY +
+          Math.random() * (WORLD_CONFIG.WORLD_HEIGHT - WORLD_CONFIG.TILE_SIZE),
+        worldType: args.type,
+      })
+
+      resourcesActors.push(resourceActor)
+    }
+
+    return resourcesActors
   }
 }
