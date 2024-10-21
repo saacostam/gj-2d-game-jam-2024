@@ -273,7 +273,7 @@ export class MainScene extends Scene {
 
     timelineProgressLabelElement.innerText =
       stage === 'gather'
-        ? 'Craft spears by digging trees!'
+        ? 'Craft spears by cutting trees!'
         : 'Dodge the laser, and prepare for the attack!'
     timelineProgressLabelElement.style.color = color
 
