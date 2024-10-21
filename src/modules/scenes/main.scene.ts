@@ -34,7 +34,7 @@ export class MainScene extends Scene {
   private static POSITIONS: WorldPosition[] = Object.values(WorldPosition)
   private worlds: BaseWorld[] = []
 
-  private static TOTAL_ENEMIES_SPAWNED = 3
+  private static TOTAL_ENEMIES_SPAWNED = 4
 
   get loopTime() {
     return this._loopTime

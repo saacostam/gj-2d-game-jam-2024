@@ -3,6 +3,7 @@ import { WORLD_CONFIG } from '../../config'
 import { MobGraphics } from './mob.graphics'
 import { Player } from '../player'
 import { MainScene } from '../../scenes'
+import { SpearActor } from '../spear'
 
 export interface MobActorArgs {
   x: number
@@ -28,10 +29,12 @@ export class MobActor extends Actor {
     this.player = player
 
     this.onCollisionStart = (_, other) => {
-      if (other.owner instanceof Player) {
-        if (this.scene instanceof MainScene) {
-          this.scene.gameOver()
-        }
+      if (other.owner instanceof Player && this.scene instanceof MainScene) {
+        this.scene.gameOver();
+      }
+
+      if (other.owner instanceof SpearActor) {
+        this.kill();
       }
     }
   }
