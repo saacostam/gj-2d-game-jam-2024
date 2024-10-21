@@ -43,7 +43,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
   margin: auto;
   padding: 0.5rem;
   margin-top: 1rem;
@@ -55,4 +54,9 @@ img {
 #wood-counter {
   margin-left: 0.3rem;
   font-weight: 400;
+}
+
+#game-over-counter {
+  font-weight: 400;
+  margin-left: 3rem;
 }

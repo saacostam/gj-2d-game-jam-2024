@@ -26,10 +26,9 @@
 - [x] Apply resource's spritesheet with four frames of animation.
 - [x] Implement the collection logic with resources.
 
-- [ ] Implement the world destruction event (Lazer).
-- [ ] Implement the world replacement logic.
-
-- [ ] Create the portal mechanic.
+- [x] Implement the world destruction event (Laser).
+- [x] Implement the world replacement logic.
+- [x] Kill the enemy it is in the destroyed world.
 
 - [ ] \*Implement enemies.
 - [ ] \*Implement range weapon(s).
