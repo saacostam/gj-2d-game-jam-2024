@@ -6,7 +6,7 @@ import { loader } from './modules/assets'
 import { gameOverCounterHtmlElement } from './modules/ui'
 import { UrlUtils } from './modules/url'
 
-gameOverCounterHtmlElement.innerText = `❌ ${UrlUtils.getLostCount().toString()}`
+gameOverCounterHtmlElement.innerText = `❌ GAME OVERS: ${UrlUtils.getLostCount().toString()}`
 
 const game = new Engine({
   width: GAME_CONFIG.WIDTH * 3,
