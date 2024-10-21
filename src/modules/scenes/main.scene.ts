@@ -16,6 +16,8 @@ import {
   timelineProgressLabelElement,
 } from '../ui'
 import { LaserActor } from '../actors/laser'
+import { SceneKey } from './types'
+import { UrlUtils } from '../url'
 
 export class MainScene extends Scene {
   private _loopTime = 0
@@ -49,7 +51,7 @@ export class MainScene extends Scene {
 
   private nextToEliminate: number = this.getNextToEliminate()
 
-  public onInitialize(_engine: Engine<any>): void {
+  public onActivate(): void {
     for (let i = 0; i < MainScene.POSITIONS.length; i++) {
       const world = this.getNextWorld({
         position: MainScene.POSITIONS[i],
@@ -280,6 +282,25 @@ export class MainScene extends Scene {
       const world = this.getNextWorld({
         position: MainScene.POSITIONS[this.nextToEliminate],
       })
+
+      const isPlayerInDestroyedWorld = (() => {
+        const player = this.actors.find((actor) => actor instanceof Player)
+
+        if (player) {
+          return (
+            pos.x - WORLD_CONFIG.WORLD_WIDTH / 2 < player.pos.x &&
+            player.pos.x < pos.x + WORLD_CONFIG.WORLD_WIDTH / 2 &&
+            pos.y - WORLD_CONFIG.WORLD_HEIGHT / 2 < player.pos.y &&
+            player.pos.y < pos.y + WORLD_CONFIG.WORLD_HEIGHT / 2
+          )
+        }
+      })()
+
+      if (isPlayerInDestroyedWorld) {
+        const url = new URL(window.location.toString())
+        url.searchParams.set('lost', String(UrlUtils.getLostCount() + 1))
+        window.location.search = url.search
+      }
 
       this.worlds[this.nextToEliminate] = world
       this.add(world)

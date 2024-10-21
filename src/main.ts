@@ -3,6 +3,10 @@ import './style.css'
 import { GAME_CONFIG } from './modules/config'
 import { MainScene, SceneKey } from './modules/scenes'
 import { loader } from './modules/assets'
+import { gameOverCounterHtmlElement } from './modules/ui'
+import { UrlUtils } from './modules/url'
+
+gameOverCounterHtmlElement.innerText = `❌ ${UrlUtils.getLostCount().toString()}`
 
 const game = new Engine({
   width: GAME_CONFIG.WIDTH * 3,
