@@ -7,7 +7,7 @@ export interface TreeResourceActorArgs extends BaseResourceActorArgs {
 }
 
 export class TreeResourceActor extends BaseResourceActor {
-  public static TOTAL_AMOUNT = 8
+  public static TOTAL_AMOUNT = 4
 
   constructor({ x, y, worldType }: TreeResourceActorArgs) {
     let treeGraphicsRow: number

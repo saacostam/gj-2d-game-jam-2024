@@ -16,8 +16,9 @@ import {
   timelineProgressLabelElement,
 } from '../ui'
 import { LaserActor } from '../actors/laser'
-import { SceneKey } from './types'
 import { UrlUtils } from '../url'
+import { MobActor } from '../actors/mobs'
+import { OrthogonalDirection } from '../physics'
 
 export class MainScene extends Scene {
   private _loopTime = 0
@@ -25,9 +26,15 @@ export class MainScene extends Scene {
   private static TOTAL_LOOP_TIME = 15_000
 
   private laser = new LaserActor()
+  private player = new Player({
+    x: WORLD_CONFIG.WORLD_WIDTH / 2 + WORLD_CONFIG.TILE_SIZE,
+    y: WORLD_CONFIG.WORLD_HEIGHT / 2 + WORLD_CONFIG.TILE_SIZE,
+  })
 
   private static POSITIONS: WorldPosition[] = Object.values(WorldPosition)
   private worlds: BaseWorld[] = []
+
+  private static TOTAL_ENEMIES_SPAWNED = 3
 
   get loopTime() {
     return this._loopTime
@@ -63,12 +70,7 @@ export class MainScene extends Scene {
 
     this.getWorldLimitTiles().forEach((tile) => this.add(tile))
 
-    this.add(
-      new Player({
-        x: WORLD_CONFIG.WORLD_WIDTH / 2 + WORLD_CONFIG.TILE_SIZE,
-        y: WORLD_CONFIG.WORLD_HEIGHT / 2 + WORLD_CONFIG.TILE_SIZE,
-      }),
-    )
+    this.add(this.player)
 
     this.add(this.laser)
   }
@@ -297,9 +299,7 @@ export class MainScene extends Scene {
       })()
 
       if (isPlayerInDestroyedWorld) {
-        const url = new URL(window.location.toString())
-        url.searchParams.set('lost', String(UrlUtils.getLostCount() + 1))
-        window.location.search = url.search
+        this.gameOver()
       }
 
       this.worlds[this.nextToEliminate] = world
@@ -307,6 +307,51 @@ export class MainScene extends Scene {
 
       this._loopTime = this._loopTime % MainScene.TOTAL_LOOP_TIME
       this.nextToEliminate = this.getNextToEliminate()
+
+      for (let i = 0; i < MainScene.TOTAL_ENEMIES_SPAWNED; i++) {
+        const side =
+          Object.values(OrthogonalDirection)[
+            Math.floor(
+              Math.random() * Object.values(OrthogonalDirection).length,
+            )
+          ]
+
+        let x: number
+        let y: number
+        switch (side) {
+          case OrthogonalDirection.UP:
+            y = -WORLD_CONFIG.TILE_SIZE
+            x = Math.random() * WORLD_CONFIG.WORLD_WIDTH
+            break
+          case OrthogonalDirection.DOWN:
+            y = 2 * WORLD_CONFIG.WORLD_HEIGHT + WORLD_CONFIG.TILE_SIZE * 3
+            x = Math.random() * WORLD_CONFIG.WORLD_WIDTH
+            break
+          case OrthogonalDirection.LEFT:
+            x = -WORLD_CONFIG.TILE_SIZE
+            y = Math.random() * WORLD_CONFIG.WORLD_HEIGHT
+            break
+          case OrthogonalDirection.RIGHT:
+          default:
+            x = 2 * WORLD_CONFIG.WORLD_WIDTH + WORLD_CONFIG.TILE_SIZE * 3
+            y = Math.random() * WORLD_CONFIG.WORLD_HEIGHT
+            break
+        }
+
+        this.add(
+          new MobActor({
+            x: x,
+            y: y,
+            player: this.player,
+          }),
+        )
+      }
     }
+  }
+
+  public gameOver() {
+    const url = new URL(window.location.toString())
+    url.searchParams.set('lost', String(UrlUtils.getLostCount() + 1))
+    window.location.search = url.search
   }
 }

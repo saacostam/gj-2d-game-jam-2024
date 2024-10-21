@@ -6,7 +6,7 @@ export const mobSpritesheet = SpriteSheet.fromImageSource({
   grid: {
     rows: 2,
     columns: 1,
-    spriteWidth: 8,
-    spriteHeight: 8,
+    spriteWidth: 6,
+    spriteHeight: 6,
   },
 })
