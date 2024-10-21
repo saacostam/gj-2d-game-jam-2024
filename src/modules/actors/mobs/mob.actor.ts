@@ -19,8 +19,8 @@ export class MobActor extends Actor {
       x,
       y,
       collisionType: CollisionType.Passive,
-      width: WORLD_CONFIG.TILE_SIZE,
-      height: WORLD_CONFIG.TILE_SIZE,
+      width: WORLD_CONFIG.TILE_SIZE*3/4,
+      height: WORLD_CONFIG.TILE_SIZE*3/4,
     })
 
     this.graphics.use(MobGraphics.sprite)
