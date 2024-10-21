@@ -26,7 +26,7 @@
 - [x] Apply resource's spritesheet with four frames of animation.
 - [x] Implement the collection logic with resources.
 
-- [ ] Implement the world destruction event (Lazer).
+- [ ] Implement the world destruction event (Laser).
 - [ ] Implement the world replacement logic.
 
 - [ ] \*Implement enemies.
