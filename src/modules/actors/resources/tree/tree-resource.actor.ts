@@ -1,8 +1,10 @@
 import { WorldType } from '../../../worlds'
-import { BaseResourceActor, BaseResourceActorArgs } from '../base'
+import { BaseResourceActor } from '../base'
 import { TreeResourceGraphics } from './tree-resource.graphics'
 
-export interface TreeResourceActorArgs extends BaseResourceActorArgs {
+export interface TreeResourceActorArgs {
+  x: number
+  y: number
   worldType: WorldType
 }
 

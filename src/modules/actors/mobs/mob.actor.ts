@@ -19,8 +19,8 @@ export class MobActor extends Actor {
       x,
       y,
       collisionType: CollisionType.Passive,
-      width: WORLD_CONFIG.TILE_SIZE*3/4,
-      height: WORLD_CONFIG.TILE_SIZE*3/4,
+      width: (WORLD_CONFIG.TILE_SIZE * 3) / 4,
+      height: (WORLD_CONFIG.TILE_SIZE * 3) / 4,
     })
 
     this.graphics.use(MobGraphics.sprite)
@@ -30,11 +30,11 @@ export class MobActor extends Actor {
 
     this.onCollisionStart = (_, other) => {
       if (other.owner instanceof Player && this.scene instanceof MainScene) {
-        this.scene.gameOver();
+        this.scene.gameOver()
       }
 
       if (other.owner instanceof SpearActor) {
-        this.kill();
+        this.kill()
       }
     }
   }

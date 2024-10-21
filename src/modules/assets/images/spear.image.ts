@@ -1,3 +1,3 @@
 import { ImageSource } from 'excalibur'
 
-export const spearImage = new ImageSource('/spear.png')
+export const spearImage = new ImageSource('./spear.png')
