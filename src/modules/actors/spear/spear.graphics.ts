@@ -1,8 +1,8 @@
-import { Sprite } from "excalibur";
-import { spearImage } from "../../assets";
+import { Sprite } from 'excalibur'
+import { spearImage } from '../../assets'
 
 export const SpearGraphics = {
-    sprite: new Sprite({
-        image: spearImage,
-    }),
+  sprite: new Sprite({
+    image: spearImage,
+  }),
 }

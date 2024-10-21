@@ -12,6 +12,7 @@ import { PlayerGraphics } from './player.graphics'
 import { OrthogonalDirection } from '../../physics'
 import { BaseResourceActor, TreeResourceActor } from '../resources'
 import { woodCounterHtmlElement } from '../../ui'
+import { SpearActor } from '../spear'
 
 export interface PlayerArgs {
   x: number
@@ -57,6 +58,29 @@ export class Player extends Actor {
     }
 
     this.wood = 0
+  }
+
+  onInitialize(engine: Engine<any>): void {
+    super.onInitialize(engine)
+
+    engine.input.pointers.primary.on('down', (e) => {
+      if (this.wood <= 0) return
+
+      const dir = new Vector(
+        e.coordinates.worldPos.x - this.pos.x,
+        e.coordinates.worldPos.y - this.pos.y,
+      ).normalize()
+
+      this.scene?.add(
+        new SpearActor({
+          x: this.pos.x,
+          y: this.pos.y,
+          dir: dir,
+        }),
+      )
+
+      this.wood--
+    })
   }
 
   public get wood(): number {
