@@ -60,3 +60,7 @@ img {
   font-weight: 400;
   margin-left: 3rem;
 }
+
+#timeline-progress-wrapper{
+  margin-bottom: 0.5rem;
+}
