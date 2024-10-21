@@ -89,6 +89,6 @@ export class Player extends Actor {
       }
     }
 
-    this.z = this.pos.y;
+    this.z = this.pos.y
   }
 }

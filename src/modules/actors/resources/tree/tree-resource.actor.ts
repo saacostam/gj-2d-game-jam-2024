@@ -9,20 +9,9 @@ export interface TreeResourceActorArgs extends BaseResourceActorArgs {
 }
 
 export class TreeResourceActor extends BaseResourceActor {
-  private treeResouceGraphics: ReturnType<typeof TreeResourceGraphics>
+  public static TOTAL_AMOUNT = 8
 
   constructor({ x, y, worldType }: TreeResourceActorArgs) {
-    super({
-      x,
-      y,
-      collisionType: CollisionType.Fixed,
-      collider: Shape.Box(
-        WORLD_CONFIG.TILE_SIZE / 4,
-        WORLD_CONFIG.TILE_SIZE / 5,
-      ),
-      anchor: new Vector(0.5, 0.9),
-    })
-
     let treeGraphicsRow: number
     switch (worldType) {
       case WorldType.FOREST:
@@ -46,8 +35,20 @@ export class TreeResourceActor extends BaseResourceActor {
         break
     }
 
-    this.treeResouceGraphics = TreeResourceGraphics(treeGraphicsRow)
-    this.graphics.use(this.treeResouceGraphics.sprite)
-    this.graphics.use(this.treeResouceGraphics.animations.full)
+    super({
+      x,
+      y,
+      amount: TreeResourceActor.TOTAL_AMOUNT,
+      collisionType: CollisionType.Fixed,
+      collider: Shape.Box(
+        WORLD_CONFIG.TILE_SIZE / 4,
+        WORLD_CONFIG.TILE_SIZE / 5,
+      ),
+      anchor: new Vector(0.5, 0.9),
+      resourceGraphics: TreeResourceGraphics(treeGraphicsRow),
+    })
+
+    this.graphics.use(this.resourceGraphics.sprite)
+    this.graphics.use(this.resourceGraphics.animations.full)
   }
 }
