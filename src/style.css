@@ -44,6 +44,7 @@ img {
   justify-content: center;
   align-items: center;
   margin: auto;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   margin-top: 1rem;
   width: 636px;
@@ -67,4 +68,9 @@ img {
 
 #enemies-killed-counter {
   margin-left: 3rem;
+}
+
+.card {
+  width: 636px;
+  margin: auto;
 }
