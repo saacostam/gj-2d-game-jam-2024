@@ -5,12 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal Realms | saacostam</title>
-    <script type="module" crossorigin src="./assets/index-CE4KBN8l.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CePRCezY.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" crossorigin src="./assets/index-BPacb_qP.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-wHhkzWxP.css">
   </head>
   <body>
     <div id="app">
-      <h1>Portal Realms</h1>
+      <h1 class="text-3xl font-bold text-primary">Portal Realms</h1>
       <div id="timeline-progress-wrapper">
         <div id="timeline-progress-label">...</div>
         <progress id="timeline-progress" max="100" value="0"></progress>
@@ -22,6 +24,22 @@
         <div id="wood-counter">0</div>
         <div id="enemies-killed-counter">☠️ KILLED: 0</div>
         <div id="game-over-counter">❌ 0</div>
+      </div>
+      <div class="w-[636px] mx-auto mb-4">
+        <details class="collapse collapse-arrow card border-2 rounded-lg">
+          <summary class="collapse-title text-xl font-medium">Instructions</summary>
+          <div class="collapse-content">
+            <ul class="text-left list-disc ml-4">
+              <li>Use the arrow keys to navigate your character</li>
+              <li>
+                Press the space bar when near a tree to chop it down and collect the
+                resources
+              </li>
+              <li>Craft spears using the wood you gather</li>
+              <li>Left-click to launch the spears you've created</li>
+            </ul>
+          </div>
+        </details>
       </div>
     </div>
   </body>
